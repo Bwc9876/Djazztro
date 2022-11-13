@@ -25,7 +25,7 @@ jobs:
                   python-version: 3.11
             - uses: Gr1N/setup-poetry@v7
             - name: Install dependencies
-              run: pnpm install && poetry install
+              run: pnpm --filter "root" install && poetry install
             - name: Format code
               run: pnpm run format
             - name: Commit changes
