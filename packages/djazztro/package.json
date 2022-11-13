@@ -3,7 +3,8 @@
     "description": "The web development stack for astronauts with deadlines.",
     "author": "Bwc9876 <bwc9876@gmail.com> (https://github.com/Bwc9876)",
     "homepage": "https://github.com/Bwc9876/Djazztro",
-    "version": "0.0.2",
+    "readme": "https://raw.githubusercontent.com/Bwc9876/Djazztro/main/README.md",
+    "version": "0.0.3",
     "repository": {
         "type": "git",
         "url": "https://github.com/Bwc9876/Djazztro.git",
@@ -16,8 +17,7 @@
     "files": [
         "src",
         "index.ts",
-        "tsconfig.json",
-        "../../README.md"
+        "tsconfig.json"
     ],
     "keywords": [
         "astro",
@@ -31,5 +31,6 @@
     },
     "peerDependencies": {
         "astro": "^1.6.7"
-    }
+    },
+    "license": "MIT"
 }
