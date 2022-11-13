@@ -20,18 +20,18 @@ export const makeBackend = async (data: PromptData) => {
     spinner.start("Installing Backend Dependencies");
 
     if (data.pythonPackageManager === "pip") {
-        await execAsync(`pip install django django_djazztro`, `${data.projectName}/backend`);
+        await execAsync(`pip install django django-djazztro`, `${data.projectName}/backend`);
         if (data.features.includes("Black")) {
             await execAsync(`pip install black`, `${data.projectName}/backend`);
         }
     } else if (data.pythonPackageManager === "poetry") {
         makePyProject(data);
-        await execAsync(`poetry add django django_djazztro`, `${data.projectName}/backend`);
+        await execAsync(`poetry add django django-djazztro`, `${data.projectName}/backend`);
         if (data.features.includes("Black")) {
             await execAsync(`poetry add black --group dev`, `${data.projectName}/backend`);
         }
     } else {
-        await execAsync(`pipenv install django django_djazztro`, `${data.projectName}/backend`);
+        await execAsync(`pipenv install django django-djazztro`, `${data.projectName}/backend`);
         if (data.features.includes("Black")) {
             await execAsync(`pipenv install black --dev`, `${data.projectName}/backend`);
         }
