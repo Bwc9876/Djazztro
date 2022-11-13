@@ -1,11 +1,11 @@
 name: Format
-on: 
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+on:
+    push:
+        branches:
+            - main
+    pull_request:
+        branches:
+            - main
 
 jobs:
     formatting:
@@ -33,6 +33,5 @@ jobs:
               with:
                   commit_message: "Format"
                   branch: ${{ github.head_ref }}
-                  file_pattern: ". ':!.github/**'"
                   commit_user_name: github-actions[bot]
                   commit_user_email: github-actions[bot]@users.noreply.github.com
