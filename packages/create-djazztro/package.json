@@ -3,7 +3,17 @@
     "type": "module",
     "version": "0.0.1",
     "description": "Template used to create a new project with djazztro",
-    "exports": "./index.js",
+    "exports": {
+        ".": "./index.js"
+    },
+    "bin": {
+        "create-djazztro": "./index.js"
+    },
+    "files": [
+        "dist",
+        "index.js",
+        "tsconfigs"
+    ],
     "scripts": {
         "build": "tsc"
     },
