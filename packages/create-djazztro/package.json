@@ -1,7 +1,7 @@
 {
     "name": "create-djazztro",
     "type": "module",
-    "version": "0.0.2",
+    "version": "0.0.1",
     "description": "Template used to create a new project with djazztro",
     "exports": {
         ".": "./index.js"
