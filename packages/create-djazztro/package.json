@@ -1,7 +1,13 @@
 {
     "name": "create-djazztro",
     "type": "module",
-    "version": "0.0.2",
+    "homepage": "https://github.com/Bwc9876/Djazztro",
+    "version": "0.0.5",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Bwc9876/djazztro.git",
+        "directory": "packages/create-djazztro"
+    },
     "description": "Template used to create a new project with djazztro",
     "exports": {
         ".": "./index.js"
@@ -12,15 +18,21 @@
     "files": [
         "dist",
         "index.js",
-        "tsconfig.json"
+        "tsconfig.json",
+        "../../README.md"
     ],
     "scripts": {
+        "prepublish": "pnpm build",
         "build": "tsc"
     },
     "keywords": [
-        "template"
+        "template",
+        "create",
+        "astro",
+        "withastro",
+        "django"
     ],
-    "author": "Bwc9876",
+    "author": "Bwc9876 <bwc9876@gmail.com> (https://github.com/Bwc9876)",
     "license": "MIT",
     "devDependencies": {
         "@types/inquirer": "^9.0.3",
