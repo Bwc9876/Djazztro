@@ -19,7 +19,7 @@ export type PromptData = {
 
 const createProjectDirectory = async (data: PromptData) => {
 
-    const spinner = ora("Creating project directory").start();
+    const spinner = ora("Creating Project Directory").start();
     makeDirIfNotExists(data.projectName);
     makeProjectJson(data);
 
@@ -35,7 +35,7 @@ const createProjectDirectory = async (data: PromptData) => {
         makeGitStuff(data);
     }
 
-    spinner.succeed("Created project directory");
+    spinner.succeed("Created Project Directory");
     
 };
 
@@ -47,7 +47,7 @@ export const main = async () => {
             "type": "input",
             "name": "projectName",
             "message": "What is the name of your project?",
-            "default": "MyProject",
+            "default": "my-app",
         },
         {
             "type": "input",

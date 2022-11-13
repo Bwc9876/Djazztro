@@ -38,25 +38,29 @@ Any context you pass to the template can be accessed using Djazztro's tags:
 
 ```astro
 ---
-import { Variable, For, If } from "djazztro";
+import { Variable, For, If, ElseIf, Else } from "djazztro";
 ---
+<Layout>
+    {/*Inserts a variable from the context called "my_variable"*/}
+    <Variable expression="my_variable" />
 
-{/*Inserts a variable from the context called "my_variable"*/}
-<Variable expression="my_variable" />
+    {/*You can also apply filters by editing `expression`*/}
+    <Variable expression="my_variable|upper" />
 
-{/*You can also apply filters by editing `expression`*/}
-<Variable expression="my_variable|upper" />
+    {/*Loops over a list called "my_list", saving the current item in a variable called `item`*/}
+    <For itemName="item" sourceList="my_list">
+        <Variable expression="item" />
+    </For>
 
-{/*Loops over a list called "my_list", saving the current item in a variable called `item`*/}
-<For itemName="item" sourceList="my_list">
-    <Variable expression="item" />
-</For>
-
-{/*Checks if a variable called "my_variable" is truthy*/}
-<If expression="my_variable">
-    True!
-    <h2 slot="else">Not True!</h2>
-</If>
+    {/*Checks if a variable called "my_variable" is truthy*/}
+    <If expression="my_variable">
+        True!
+    <ElseIf expression="some_other_variable"/>
+        First thing is false, but this is true!
+    <Else/>
+        False!
+    </If>
+</Layout>
 ```
 
 All these components secretly use Django's template language.

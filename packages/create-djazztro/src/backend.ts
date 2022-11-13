@@ -5,7 +5,7 @@ import { PromptData } from "./main.js";
 import { makeDirIfNotExists, execAsync } from "./utils.js";
 
 // TODO: Cheating rn with djazztro bc i don't feel like uploading yet
-const djazztroPath = "C:\\Users\\bwc67\\Documents\\Actual Documents\\Djazztro\\Packages\\django-djazztro";
+const djazztroPath = "C:\\Users\\bwc67\\Documents\\Actual Documents\\Djazztro\\packages\\django-djazztro";
 
 export const makeBackend = async (data: PromptData) => {
 
@@ -215,7 +215,7 @@ from django.shortcuts import render
 
 # Simple test view to make sure the backend is working, for actual projects you should make a seperate app with "${data.nodePackageManager} run django startapp <appname>"
 def home(request):
-    return render(request, "index", {"test": "Hello World!"})
+    return render(request, "index", {"test": "Hello From Django!"})
 
 urlpatterns = [
     path('', home)

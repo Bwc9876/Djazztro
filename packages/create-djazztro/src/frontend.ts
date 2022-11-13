@@ -16,8 +16,11 @@ export default defineConfig({
 });
 `;
 
+// Cheating here bc the package isn't published yet
+const djazztroPath = "\"C:\\Users\\bwc67\\Documents\\Actual Documents\\Djazztro\\packages\\djazztro\"";
+
 export const makeFrontend = async (data: PromptData) => {
-    const spinner = ora("Creating frontend directory").start();
+    const spinner = ora("Creating Frontend Directory").start();
 
     makeDirIfNotExists(`${data.projectName}/frontend`);
     makeDirIfNotExists(`${data.projectName}/frontend/src`);
@@ -40,14 +43,16 @@ export const makeFrontend = async (data: PromptData) => {
 `;
 
     const indexHtml = `---
+import { Variable } from "djazztro";
+
 import Layout from "@layouts/MainLayout.astro";
 ---
 <Layout>
     <h1>Hello, ${data.projectName}!</h1>
+    <p>Example of getting variables from context: <Variable expression="test"/></p>
 </Layout>
 `;
 
-    fs.writeFileSync(`${data.projectName}/frontend/src/components/HelloWorld.astro`, `<h1>Hello, world!</h1>`);
     fs.writeFileSync(`${data.projectName}/frontend/src/layouts/MainLayout.astro`, layoutHtml);
     fs.writeFileSync(`${data.projectName}/frontend/src/pages/index.astro`, indexHtml);
 
@@ -63,18 +68,23 @@ shamefully-hoist=true
         fs.writeFileSync(`${data.projectName}/.npmrc`, npmrc);
     }
 
-    spinner.succeed("Created frontend directory");
+    spinner.succeed("Created Frontend Directory");
 
-    const spinner2 = ora("Installing frontend dependencies").start();
+    const spinner2 = ora("Installing Frontend Dependencies").start();
 
     const packagesToInstall = [
         "astro",
+        djazztroPath
     ];
 
     const devPackagesToInstall = [
         "concurrently",
         "cross-env",
     ];
+
+    if (data.features.includes("TypeScript")) {
+        devPackagesToInstall.push("typescript");
+    }
 
     if (data.features.includes("Prettier")) {
         devPackagesToInstall.push("prettier");
@@ -96,7 +106,7 @@ shamefully-hoist=true
     await execAsync(`${data.nodePackageManager} add ${packagesToInstall.join(" ")}`, `${data.projectName}`);
     await execAsync(`${data.nodePackageManager} add -D ${devPackagesToInstall.join(" ")}`, `${data.projectName}`);
 
-    spinner2.succeed("Installed frontend dependencies");
+    spinner2.succeed("Installed Frontend Dependencies");
 
     if (data.features.includes("Prettier")) {
         const spinner3 = ora("Formatting With Prettier").start();
