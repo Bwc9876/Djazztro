@@ -10,7 +10,8 @@
     },
     "files": [
         "src",
-        "index.ts"
+        "index.ts",
+        "tsconfig.json"
     ],
     "keywords": [
         "astro",
