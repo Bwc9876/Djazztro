@@ -5,7 +5,7 @@
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/25644444/201508399-c98f41ab-3790-4c20-b82c-5b47ff3370f2.png" alt="Djazztro Logo"/><br/><br/>
-The full stack web development stack for astronauts with deadlines.
+The web development stack for astronauts with deadlines.
 </p>
 
 ## What is Djazztro
