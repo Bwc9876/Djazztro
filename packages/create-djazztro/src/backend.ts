@@ -3,10 +3,6 @@ import ora from "ora";
 import { PromptData } from "./main.js";
 import { makeDirIfNotExists, execAsync } from "./utils.js";
 
-// TODO: Cheating rn with djazztro bc i don't feel like uploading yet
-const djazztroPath =
-    "C:\\Users\\bwc67\\Documents\\Actual Documents\\Djazztro\\packages\\django-djazztro";
-
 export const makeBackend = async (data: PromptData) => {
     const spinner = ora("Creating Backend Folder");
 
@@ -24,18 +20,18 @@ export const makeBackend = async (data: PromptData) => {
     spinner.start("Installing Backend Dependencies");
 
     if (data.pythonPackageManager === "pip") {
-        await execAsync(`pip install django "${djazztroPath}"`, `${data.projectName}/backend`);
+        await execAsync(`pip install django django_djazztro`, `${data.projectName}/backend`);
         if (data.features.includes("Black")) {
             await execAsync(`pip install black`, `${data.projectName}/backend`);
         }
     } else if (data.pythonPackageManager === "poetry") {
         makePyProject(data);
-        await execAsync(`poetry add django "${djazztroPath}"`, `${data.projectName}/backend`);
+        await execAsync(`poetry add django django_djazztro`, `${data.projectName}/backend`);
         if (data.features.includes("Black")) {
             await execAsync(`poetry add black --group dev`, `${data.projectName}/backend`);
         }
     } else {
-        await execAsync(`pipenv install django "${djazztroPath}"`, `${data.projectName}/backend`);
+        await execAsync(`pipenv install django django_djazztro`, `${data.projectName}/backend`);
         if (data.features.includes("Black")) {
             await execAsync(`pipenv install black --dev`, `${data.projectName}/backend`);
         }

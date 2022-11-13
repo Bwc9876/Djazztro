@@ -16,10 +16,6 @@ export default defineConfig({
 });
 `;
 
-// Cheating here bc the package isn't published yet
-const djazztroPath =
-    '"C:\\Users\\bwc67\\Documents\\Actual Documents\\Djazztro\\packages\\djazztro"';
-
 export const makeFrontend = async (data: PromptData) => {
     const spinner = ora("Creating Frontend Directory").start();
 
@@ -73,7 +69,7 @@ shamefully-hoist=true
 
     const spinner2 = ora("Installing Frontend Dependencies").start();
 
-    const packagesToInstall = ["astro", djazztroPath];
+    const packagesToInstall = ["astro", "djazztro"];
 
     const devPackagesToInstall = ["concurrently", "cross-env"];
 
