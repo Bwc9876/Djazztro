@@ -33,5 +33,6 @@ jobs:
               with:
                   commit_message: "Format"
                   branch: ${{ github.head_ref }}
+                  file_pattern: ". ':!.github/**'"
                   commit_user_name: github-actions[bot]
                   commit_user_email: github-actions[bot]@users.noreply.github.com
