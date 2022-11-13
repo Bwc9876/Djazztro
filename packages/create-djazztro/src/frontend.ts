@@ -17,7 +17,8 @@ export default defineConfig({
 `;
 
 // Cheating here bc the package isn't published yet
-const djazztroPath = "\"C:\\Users\\bwc67\\Documents\\Actual Documents\\Djazztro\\packages\\djazztro\"";
+const djazztroPath =
+    '"C:\\Users\\bwc67\\Documents\\Actual Documents\\Djazztro\\packages\\djazztro"';
 
 export const makeFrontend = async (data: PromptData) => {
     const spinner = ora("Creating Frontend Directory").start();
@@ -60,7 +61,7 @@ import Layout from "@layouts/MainLayout.astro";
 
     makeTsConfig(data);
 
-    if (data.nodePackageManager === "pnpm") { 
+    if (data.nodePackageManager === "pnpm") {
         const npmrc = `# Expose Astro dependencies for \`pnpm\` users
 shamefully-hoist=true
     `;
@@ -72,15 +73,9 @@ shamefully-hoist=true
 
     const spinner2 = ora("Installing Frontend Dependencies").start();
 
-    const packagesToInstall = [
-        "astro",
-        djazztroPath
-    ];
+    const packagesToInstall = ["astro", djazztroPath];
 
-    const devPackagesToInstall = [
-        "concurrently",
-        "cross-env",
-    ];
+    const devPackagesToInstall = ["concurrently", "cross-env"];
 
     if (data.features.includes("TypeScript")) {
         devPackagesToInstall.push("typescript");
@@ -103,8 +98,14 @@ shamefully-hoist=true
         }
     }
 
-    await execAsync(`${data.nodePackageManager} add ${packagesToInstall.join(" ")}`, `${data.projectName}`);
-    await execAsync(`${data.nodePackageManager} add -D ${devPackagesToInstall.join(" ")}`, `${data.projectName}`);
+    await execAsync(
+        `${data.nodePackageManager} add ${packagesToInstall.join(" ")}`,
+        `${data.projectName}`
+    );
+    await execAsync(
+        `${data.nodePackageManager} add -D ${devPackagesToInstall.join(" ")}`,
+        `${data.projectName}`
+    );
 
     spinner2.succeed("Installed Frontend Dependencies");
 
@@ -113,22 +114,22 @@ shamefully-hoist=true
         await execAsync(`${data.nodePackageManager} run prettify`, `${data.projectName}`);
         spinner3.succeed("Formatted With Prettier");
     }
-
-}
+};
 
 const makeTsConfig = (data: PromptData) => {
     const contents = {
-        "extends": "astro/tsconfigs/strict",
-        "compilerOptions": {
-            "baseUrl": ".",
-            "paths": {
+        extends: "astro/tsconfigs/strict",
+        compilerOptions: {
+            baseUrl: ".",
+            paths: {
                 "@layouts/*": ["src/layouts/*"],
                 "@components/*": ["src/components/*"]
             }
         }
     };
 
-    fs.writeFileSync(`${data.projectName}/frontend/tsconfig.json`, JSON.stringify(contents, null, 2));
+    fs.writeFileSync(
+        `${data.projectName}/frontend/tsconfig.json`,
+        JSON.stringify(contents, null, 2)
+    );
 };
-
-

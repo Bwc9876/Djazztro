@@ -1,17 +1,20 @@
+<!-- Disables the inline html warning -->
+<!-- markdownlint-disable MD030 MD033 -->
+
 # Djazztro
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/25644444/201508399-c98f41ab-3790-4c20-b82c-5b47ff3370f2.png" alt="Djazztro Logo"/><br/><br/>
-The full stack web development framework for astronauts with deadlines.
+The full stack web development stack for astronauts with deadlines.
 </p>
 
 ## What is Djazztro
 
-Djazztro combines the awesome power of [Django](https://www.djangoproject.com/) with the amazing [Astro](https://www.astro.build/) static site generator tool.
+Djazztro combines the versatility of [Django](https://www.djangoproject.com/) with the elegance of the [Astro](https://www.astro.build/) static site generator.
 
 ## Why?
 
-Djazztro is a framework for people who want to use Astro, but don't want to give up Django's admin panel, or Django's ORM. It's also a framework for people who want to use Django, but don't want to give up Astro's component based approach to frontend development.
+Djazztro is a stack for people who want to use Astro, but don't want to give up Django's admin panel, or Django's ORM. It's also a stack for people who want to use Django, but don't want to give up Astro's component based approach to frontend development.
 
 ## Setup
 
@@ -65,9 +68,9 @@ import { Variable, For, If, ElseIf, Else } from "djazztro";
 
 All these components secretly use Django's template language.
 
-- The `<Variable>` component renders to `{{ {expression} }}`.
-- The `<Tag>` component renders to `{% {expression} %}`.
-- All other components combine these two components to create more some useful ones.
+-   The `<Variable>` component renders to `{{ {expression} }}`.
+-   The `<Tag>` component renders to `{% {expression} %}`.
+-   All other components combine these two components to create more some useful ones.
 
 All expressions also have escaping turned off **on Astro's side**, Django will still escape them.
 

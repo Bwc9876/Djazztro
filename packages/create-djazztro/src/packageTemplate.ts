@@ -1,8 +1,7 @@
-import fs from 'fs';
+import fs from "fs";
 import { PromptData } from "./main.js";
 
 export const makeProjectJson = (data: PromptData) => {
-
     let djangoCommand = "python manage.py";
 
     if (data.pythonPackageManager === "pipenv") {
@@ -12,21 +11,21 @@ export const makeProjectJson = (data: PromptData) => {
     }
 
     const contents: any = {
-        "name": data.projectName,
-        "private": true,
-        "version": "0.1.0",
-        "scripts": {
-            "django": `cd backend && ${djangoCommand}`,
-            "astro": "cd frontend && astro",
+        name: data.projectName,
+        private: true,
+        version: "0.1.0",
+        scripts: {
+            django: `cd backend && ${djangoCommand}`,
+            astro: "cd frontend && astro",
             "dev:frontend": "npm run astro dev",
             "dev:backend": "npm run django runserver",
-            "dev": "concurrently npm:dev:frontend npm:dev:backend -n \"Astro,Django\"",
-            "build": "npm run astro build",
-            "preview": "cross-env DEBUG=False \"npm run astro build && npm run dev:backend\""
+            dev: 'concurrently npm:dev:frontend npm:dev:backend -n "Astro,Django"',
+            build: "npm run astro build",
+            preview: 'cross-env DEBUG=False "npm run astro build && npm run dev:backend"'
         },
-        "keywords": [],
-        "author": data.projectAuthor,
-        "license": "MIT"
+        keywords: [],
+        author: data.projectAuthor,
+        license: "MIT"
     };
 
     const prettier = data.features.includes("Prettier");
@@ -57,9 +56,8 @@ export const makeProjectJson = (data: PromptData) => {
     }
 
     if (prettier && black) {
-        contents.scripts["format"] =  "npm run prettify && npm run black";
+        contents.scripts["format"] = "npm run prettify && npm run black";
     }
 
     fs.writeFileSync(`${data.projectName}/package.json`, JSON.stringify(contents, null, 2));
-
-}
+};

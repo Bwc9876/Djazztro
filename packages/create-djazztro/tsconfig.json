@@ -2,9 +2,9 @@
     "compilerOptions": {
         "target": "es5",
         "module": "Node16",
-        "moduleResolution": "node16", 
-        "strict": true, 
-        "esModuleInterop": true, 
+        "moduleResolution": "node16",
+        "strict": true,
+        "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
         "outDir": "dist"
     }

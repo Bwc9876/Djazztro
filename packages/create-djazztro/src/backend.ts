@@ -1,19 +1,18 @@
-
 import fs from "fs";
 import ora from "ora";
 import { PromptData } from "./main.js";
 import { makeDirIfNotExists, execAsync } from "./utils.js";
 
 // TODO: Cheating rn with djazztro bc i don't feel like uploading yet
-const djazztroPath = "C:\\Users\\bwc67\\Documents\\Actual Documents\\Djazztro\\packages\\django-djazztro";
+const djazztroPath =
+    "C:\\Users\\bwc67\\Documents\\Actual Documents\\Djazztro\\packages\\django-djazztro";
 
 export const makeBackend = async (data: PromptData) => {
-
     const spinner = ora("Creating Backend Folder");
 
     makeDirIfNotExists(`${data.projectName}/backend`);
     makeDirIfNotExists(`${data.projectName}/backend/${data.projectName}`);
-    
+
     fs.writeFileSync(`${data.projectName}/backend/${data.projectName}/__init__.py`, "");
     makeManage(data);
     makeSettings(data);
@@ -55,7 +54,6 @@ export const makeBackend = async (data: PromptData) => {
     await execAsync(`${data.nodePackageManager} run django migrate`, `${data.projectName}`);
 
     spinner.succeed("Migrated Database");
-
 };
 
 const makeManage = (data: PromptData) => {
@@ -83,7 +81,6 @@ if __name__ == '__main__':
 `;
 
     fs.writeFileSync(`${data.projectName}/backend/manage.py`, manage);
-
 };
 
 const makeSettings = (data: PromptData) => {
@@ -195,7 +192,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'TestProject.settings')
 application = get_wsgi_application()
 `;
 
-const asgi = `import os
+    const asgi = `import os
 
 from django.core.asgi import get_asgi_application
 
@@ -226,7 +223,6 @@ urlpatterns = [
 };
 
 const makePyProject = (data: PromptData) => {
-
     const pyproject = `[tool.poetry]
 name = "${data.projectName}"
 version = "0.1.0"
@@ -238,5 +234,4 @@ python = "^3.10"
 `;
 
     fs.writeFileSync(`${data.projectName}/backend/pyproject.toml`, pyproject);
-
 };

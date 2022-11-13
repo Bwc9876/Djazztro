@@ -1,25 +1,25 @@
 {
-  "name": "create-djazztro",
-  "type": "module",
-  "version": "0.0.1",
-  "description": "Template used to create a new project with djazztro",
-  "exports": "./index.js",
-  "scripts": {
-    "build": "tsc"
-  },
-  "keywords": [
-    "template"
-  ],
-  "author": "Bwc9876",
-  "license": "MIT",
-  "devDependencies": {
-    "@types/inquirer": "^9.0.3",
-    "@types/node": "^18.11.9",
-    "typescript": "^4.8.4"
-  },
-  "dependencies": {
-    "inquirer": "^9.1.4",
-    "ora": "^6.1.2"
-  },
-  "node": ">=14.16"
+    "name": "create-djazztro",
+    "type": "module",
+    "version": "0.0.1",
+    "description": "Template used to create a new project with djazztro",
+    "exports": "./index.js",
+    "scripts": {
+        "build": "tsc"
+    },
+    "keywords": [
+        "template"
+    ],
+    "author": "Bwc9876",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/inquirer": "^9.0.3",
+        "@types/node": "^18.11.9",
+        "typescript": "^4.8.4"
+    },
+    "dependencies": {
+        "inquirer": "^9.1.4",
+        "ora": "^6.1.2"
+    },
+    "node": ">=14.16"
 }

@@ -1,27 +1,28 @@
 {
-  "name": "djazztro",
-  "description": "The web development stack for astronauts with deadlines.",
-  "author": "Bwc9876 <bwc9876@gmail.com> (https://github.com/Bwc9876)",
-  "version": "0.0.1",
-  "type": "module",
-  "exports": {
-    ".": "./index.ts"
-  },
-  "files": [
-    "src",
-    "index.ts"
-  ],
-  "keywords": [
-    "astro",
-    "withastro",
-    "django",
-    "astro-component"
-  ],
-  "scripts": {},
-  "devDependencies": {
-    "astro": "^1.6.7"
-  },
-  "peerDependencies": {
-    "astro": "^1.6.7"
-  }
+    "name": "djazztro",
+    "description": "The web development stack for astronauts with deadlines.",
+    "author": "Bwc9876 <bwc9876@gmail.com> (https://github.com/Bwc9876)",
+    "homepage": "https://github.com/Bwc9876/Djazztro",
+    "version": "0.0.1",
+    "type": "module",
+    "exports": {
+        ".": "./index.ts"
+    },
+    "files": [
+        "src",
+        "index.ts"
+    ],
+    "keywords": [
+        "astro",
+        "withastro",
+        "django",
+        "astro-component"
+    ],
+    "scripts": {},
+    "devDependencies": {
+        "astro": "^1.6.7"
+    },
+    "peerDependencies": {
+        "astro": "^1.6.7"
+    }
 }
