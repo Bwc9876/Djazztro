@@ -15,6 +15,8 @@ jobs:
         with:
           node-version: 16
           cache: "pnpm"
+      - name: Install Dependencies
+        run: pnpm i
       - name: Publish
         run: pnpm -r publish
         env:
