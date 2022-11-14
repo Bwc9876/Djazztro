@@ -1,7 +1,7 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
-  "features": {
-    "ghcr.io/NicoVIII/devcontainer-features/pnpm:1": {},
-    "ghcr.io/devcontainers-contrib/features/poetry:1": {}
-  }
+    "image": "mcr.microsoft.com/devcontainers/universal:2",
+    "features": {
+        "ghcr.io/NicoVIII/devcontainer-features/pnpm:1": {},
+        "ghcr.io/devcontainers-contrib/features/poetry:1": {}
+    }
 }
