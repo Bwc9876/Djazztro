@@ -63,6 +63,7 @@ shamefully-hoist=true
     `;
 
         fs.writeFileSync(`${data.projectName}/.npmrc`, npmrc);
+        await execAsync("pnpm install", data.projectName);
     }
 
     spinner.succeed("Created Frontend Directory");

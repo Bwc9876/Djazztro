@@ -1,6 +1,7 @@
 import fs from "fs";
 import ora from "ora";
 import { PromptData } from "./main.js";
+import { getSecretKey } from "./secretKey.js";
 import { makeDirIfNotExists, execAsync } from "./utils.js";
 
 export const makeBackend = async (data: PromptData) => {
@@ -84,7 +85,7 @@ const makeSettings = (data: PromptData) => {
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = 'django-insecure-lwdwxm!i6*e^-3hn+6pzf^%2entnco98#t@8yty-z08l^&pirs'
+SECRET_KEY = 'django-insecure-${getSecretKey()}'
 DEBUG = os.getenv("DEBUG", "True") == "True"
 ALLOWED_HOSTS = ["*"]
 
