@@ -1,7 +1,5 @@
 // Creates an *insecure* django secret key for use in development.
 
-const RAND_MAX = 2 ** 8;
-
 const CHARS = "abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)".split("");
 const KEY_LENGTH = 50;
 
