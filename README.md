@@ -43,6 +43,7 @@ Any context you pass to the template can be accessed using Djazztro's tags:
 ---
 import { Variable, For, If, ElseIf, Else } from "djazztro";
 ---
+
 <Layout>
     {/*Inserts a variable from the context called "my_variable"*/}
     <Variable expression="my_variable" />
@@ -58,9 +59,9 @@ import { Variable, For, If, ElseIf, Else } from "djazztro";
     {/*Checks if a variable called "my_variable" is truthy*/}
     <If expression="my_variable">
         True!
-    <ElseIf expression="some_other_variable"/>
+        <ElseIf expression="some_other_variable" />
         First thing is false, but this is true!
-    <Else/>
+        <Else />
         False!
     </If>
 </Layout>

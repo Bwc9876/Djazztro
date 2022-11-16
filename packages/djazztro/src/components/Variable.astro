@@ -1,5 +1,5 @@
 ---
-import Empty from './Empty.astro';
+import Empty from "./Empty.astro";
 
 export interface Props {
     expression: string;
@@ -7,4 +7,5 @@ export interface Props {
 
 const { expression } = Astro.props as Props;
 ---
-<Empty set:html={`{{ ${expression} }}`}/>
+
+<Empty set:html={`{{ ${expression} }}`} />
