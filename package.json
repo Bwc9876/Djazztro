@@ -15,7 +15,8 @@
         "prepare": "husky install"
     },
     "workspaces": [
-        "packages/*"
+        "packages/*",
+        "examples/*"
     ],
     "devDependencies": {
         "@types/node": "^18.11.9",
