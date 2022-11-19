@@ -87,9 +87,13 @@ export const main = async () => {
     await makeFrontend(data);
     await makeBackend(data);
 
-    if (data.features.includes("Git")) {
-        await execAsync('git add * && git commit -m "Initial Commit"', data.projectName);
-    }
-
     console.log("Done! 🎉");
+    console.log("You can now run the following commands:");
+    console.log(`cd ${data.projectName}`);
+    console.log(`${data.nodePackageManager} run dev`);
+    console.log(
+        `To run Django (manage.py) commands run "${data.nodePackageManager} run django {command}"`
+    );
+    console.log(`To run Astro commands run "${data.nodePackageManager} run astro {command}"`);
+    console.log("Happy coding! 🚀");
 };

@@ -24,7 +24,17 @@ Now, run `npm create djazztro@latest` and follow the prompts.
 
 You can now `cd` into your new project's directory and run `npm run dev` to launch a development server.
 
+### Commands
+
+You can run both Django and Astro commands by running `npm run django/astro command`
+
+Examples:
+- `npm run django migrate`
+- `npm run astro build`
+
 ## How It Works
+
+If you understand both Django and Astro, the way Djazztro works should be easy to understand. If you don't, here's a quick overview.
 
 ### In Code
 
@@ -86,6 +96,10 @@ Djazztro starts a django development server and an astro dev server. Django's se
 Djazztro has Astro build your frontend into a static site, and then Django uses the root of that static site as it's templates folder.
 
 ![Djazztro-Prod-Explanation](https://user-images.githubusercontent.com/25644444/201508342-d728a9ff-aead-4544-baa9-9de8adc9f026.png)
+
+## Previewing Production Builds
+
+To preview your production build, run `npm run preview`. This will bundle you Astro pages serve your django project on port `8000`. Keep in mind this isn't a production server, and is only meant for previewing your production build.
 
 ## Contributing
 

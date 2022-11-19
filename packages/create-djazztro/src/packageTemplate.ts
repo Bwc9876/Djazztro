@@ -12,6 +12,7 @@ export const makeProjectJson = (data: PromptData) => {
 
     const contents: any = {
         name: data.projectName,
+        description: data.projectDescription,
         private: true,
         version: "0.1.0",
         scripts: {
@@ -21,9 +22,10 @@ export const makeProjectJson = (data: PromptData) => {
             "dev:backend": "npm run django runserver",
             dev: 'concurrently npm:dev:frontend npm:dev:backend -n "Astro,Django"',
             build: "npm run astro build",
-            preview: 'cross-env DEBUG=False "npm run astro build && npm run dev:backend"'
+            preview: 'cross-env DEBUG=False "npm run astro build && npm run dev:backend"',
+            prepare: `${data.nodePackageManager} run django migrate`
         },
-        keywords: [],
+        keywords: ["withastro", "django"],
         author: data.projectAuthor,
         license: "MIT"
     };
