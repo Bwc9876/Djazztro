@@ -5,7 +5,7 @@ import { makeProjectJson } from "./packageTemplate.js";
 import { makeEslintConfig, makeGitStuff, makePrettierConfig } from "./features.js";
 import { makeFrontend } from "./frontend.js";
 import { makeBackend } from "./backend.js";
-import { execAsync, makeDirIfNotExists } from "./utils.js";
+import { makeDirIfNotExists } from "./utils.js";
 
 export type PromptData = {
     projectName: string;

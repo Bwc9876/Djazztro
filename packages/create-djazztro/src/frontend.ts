@@ -4,6 +4,9 @@ import { PromptData } from "./main.js";
 import { makeDirIfNotExists, execAsync } from "./utils.js";
 
 const astroFile = `import { defineConfig } from 'astro/config';
+import * as dotenv from 'dotenv';
+
+dotenv.config({ path: path.resolve(process.cwd(), '../.env') });
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,6 +15,9 @@ export default defineConfig({
     "build": {
         "format": "file",
         "client": "../static"
+    },
+    "server": {
+        "port": process.env.ASTRO_PORT || 3000
     }
 });
 `;
@@ -70,7 +76,7 @@ shamefully-hoist=true
 
     const spinner2 = ora("Installing Frontend Dependencies").start();
 
-    const packagesToInstall = ["astro", "djazztro"];
+    const packagesToInstall = ["astro", "djazztro", "dotenv"];
 
     const devPackagesToInstall = ["concurrently", "cross-env"];
 

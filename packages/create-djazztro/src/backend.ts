@@ -20,19 +20,21 @@ export const makeBackend = async (data: PromptData) => {
 
     spinner.start("Installing Backend Dependencies");
 
+    const packagesToInstall = ["django", "django-djazztro", "python-dotenv"].join(" ");
+
     if (data.pythonPackageManager === "pip") {
-        await execAsync(`pip install django django-djazztro`, `${data.projectName}/backend`);
+        await execAsync(`pip install ${packagesToInstall}`, `${data.projectName}/backend`);
         if (data.features.includes("Black")) {
             await execAsync(`pip install black`, `${data.projectName}/backend`);
         }
     } else if (data.pythonPackageManager === "poetry") {
         makePyProject(data);
-        await execAsync(`poetry add django django-djazztro`, `${data.projectName}/backend`);
+        await execAsync(`poetry add ${packagesToInstall}`, `${data.projectName}/backend`);
         if (data.features.includes("Black")) {
             await execAsync(`poetry add black --group dev`, `${data.projectName}/backend`);
         }
     } else {
-        await execAsync(`pipenv install django django-djazztro`, `${data.projectName}/backend`);
+        await execAsync(`pipenv install ${packagesToInstall}`, `${data.projectName}/backend`);
         if (data.features.includes("Black")) {
             await execAsync(`pipenv install black --dev`, `${data.projectName}/backend`);
         }
@@ -84,10 +86,16 @@ const makeSettings = (data: PromptData) => {
     const settings = `import os
 from pathlib import Path
 
+from dotenv import load_dotenv
+
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = 'django-insecure-${getSecretKey()}'
+
+load_dotenv(BASE_DIR / "../../.env")
+
 DEBUG = os.getenv("DEBUG", "True") == "True"
-ALLOWED_HOSTS = ["*"]
+SECRET_KEY = os.getenv("SECRET_KEY", "django-insecure-${getSecretKey()}")
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "*").split(",")
+ASTRO_PORT = os.getenv("ASTRO_PORT", "3000")
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -207,7 +215,7 @@ const makeUrls = (data: PromptData) => {
 from django.urls import path
 from django.shortcuts import render
 
-# Simple test view to make sure the backend is working, for actual projects you should make a seperate app with "${data.nodePackageManager} run django startapp <appname>"
+# Simple test view to make sure the backend is working, for actual projects you should make a separate app with "${data.nodePackageManager} run django startapp <app name>"
 def home(request):
     return render(request, "index", {"test": "Hello From Django!"})
 
@@ -220,7 +228,7 @@ urlpatterns = [
 };
 
 const makePyProject = (data: PromptData) => {
-    const pyproject = `[tool.poetry]
+    const pyProject = `[tool.poetry]
 name = "${data.projectName}"
 version = "0.1.0"
 description = ""
@@ -230,5 +238,5 @@ authors = ["${data.projectAuthor}"]
 python = "^3.10"
 `;
 
-    fs.writeFileSync(`${data.projectName}/backend/pyproject.toml`, pyproject);
+    fs.writeFileSync(`${data.projectName}/backend/pyproject.toml`, pyProject);
 };

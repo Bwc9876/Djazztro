@@ -29,8 +29,9 @@ You can now `cd` into your new project's directory and run `npm run dev` to laun
 You can run both Django and Astro commands by running `npm run django/astro command`
 
 Examples:
-- `npm run django migrate`
-- `npm run astro build`
+
+-   `npm run django migrate`
+-   `npm run astro build`
 
 ## How It Works
 
