@@ -3,10 +3,11 @@ import ora from "ora";
 import { PromptData } from "./main.js";
 import { makeDirIfNotExists, execAsync } from "./utils.js";
 
-const astroFile = `import { defineConfig } from 'astro/config';
+const astroFile = `import { resolve } from 'node:path';
+import { defineConfig } from 'astro/config';
 import * as dotenv from 'dotenv';
 
-dotenv.config({ path: path.resolve(process.cwd(), '../.env') });
+dotenv.config({ path: resolve(process.cwd(), '../.env') });
 
 // https://astro.build/config
 export default defineConfig({

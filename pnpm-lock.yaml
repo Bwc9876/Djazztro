@@ -27,19 +27,33 @@ importers:
 
     my-app:
         specifiers:
+            "@typescript-eslint/eslint-plugin": ^5.42.1
+            "@typescript-eslint/parser": ^5.42.1
             astro: ^1.6.7
             concurrently: ^7.5.0
             cross-env: ^7.0.3
-            djazztro: workspace:^0.0.3
+            djazztro: workspace:^0.0.4
             dotenv: ^16.0.3
+            eslint: ^8.27.0
+            eslint-config-prettier: ^8.5.0
+            eslint-plugin-astro: ^0.21.0
+            prettier: ^2.7.1
+            prettier-plugin-astro: ^0.7.0
             typescript: ^4.8.4
         dependencies:
             astro: 1.6.7
             djazztro: link:../packages/djazztro
             dotenv: 16.0.3
         devDependencies:
+            "@typescript-eslint/eslint-plugin": 5.42.1_2udltptbznfmezdozpdoa2aemq
+            "@typescript-eslint/parser": 5.42.1_rmayb2veg2btbq6mbmnyivgasy
             concurrently: 7.5.0
             cross-env: 7.0.3
+            eslint: 8.27.0
+            eslint-config-prettier: 8.5.0_eslint@8.27.0
+            eslint-plugin-astro: 0.21.0_eslint@8.27.0
+            prettier: 2.7.1
+            prettier-plugin-astro: 0.7.0
             typescript: 4.8.4
 
     packages/create-djazztro:
@@ -1192,6 +1206,24 @@ packages:
         engines: { node: ">=8" }
         dev: true
 
+    /astro-eslint-parser/0.9.0:
+        resolution:
+            {
+                integrity: sha512-IJCIVQ9ON9MWc9SbIHnX6ljqmlNBC6nimsga486duI+tLXPX1ZG4mOWnqwvvh77Xpg1CVkRACrPvYRiaTsOCtg==
+            }
+        engines: { node: ^14.18.0 || >=16.0.0 }
+        dependencies:
+            "@astrojs/compiler": 0.29.13
+            "@typescript-eslint/types": 5.42.1
+            astrojs-compiler-sync: 0.3.1_@astrojs+compiler@0.29.13
+            debug: 4.3.4
+            eslint-scope: 7.1.1
+            eslint-visitor-keys: 3.3.0
+            espree: 9.4.1
+        transitivePeerDependencies:
+            - supports-color
+        dev: true
+
     /astro/1.6.7:
         resolution:
             {
@@ -1270,6 +1302,19 @@ packages:
             - supports-color
             - terser
             - ts-node
+
+    /astrojs-compiler-sync/0.3.1_@astrojs+compiler@0.29.13:
+        resolution:
+            {
+                integrity: sha512-IzPuzkwdiRIZoBhCTuFhuBMWVESXgthTdwQ24QS8LvLargcWAA4E21KmZo4wimsmOG5vj4KKs9QFpy9zhXuo9Q==
+            }
+        engines: { node: ^14.18.0 || >=16.0.0 }
+        peerDependencies:
+            "@astrojs/compiler": ">=0.27.0"
+        dependencies:
+            "@astrojs/compiler": 0.29.13
+            synckit: 0.8.4
+        dev: true
 
     /bail/2.0.2:
         resolution:
@@ -1662,6 +1707,15 @@ packages:
             path-key: 3.1.1
             shebang-command: 2.0.0
             which: 2.0.2
+
+    /cssesc/3.0.0:
+        resolution:
+            {
+                integrity: sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==
+            }
+        engines: { node: ">=4" }
+        hasBin: true
+        dev: true
 
     /data-uri-to-buffer/4.0.0:
         resolution:
@@ -2393,6 +2447,26 @@ packages:
             eslint: ">=7.0.0"
         dependencies:
             eslint: 8.27.0
+        dev: true
+
+    /eslint-plugin-astro/0.21.0_eslint@8.27.0:
+        resolution:
+            {
+                integrity: sha512-7pEhTfYT+tlOMOSmQV77TNgCeuFZgqSAqJPTHh6LYlwLqYyBQLURc5RRtlQqCJkufSh4Fan4nsV3LXCT/vjpCA==
+            }
+        engines: { node: ^14.18.0 || >=16.0.0 }
+        peerDependencies:
+            eslint: ">=7.0.0"
+        dependencies:
+            "@typescript-eslint/types": 5.42.1
+            astro-eslint-parser: 0.9.0
+            eslint: 8.27.0
+            eslint-utils: 3.0.0_eslint@8.27.0
+            postcss: 8.4.19
+            postcss-selector-parser: 6.0.10
+            sourcemap-codec: 1.4.8
+        transitivePeerDependencies:
+            - supports-color
         dev: true
 
     /eslint-scope/5.1.1:
@@ -4659,6 +4733,17 @@ packages:
             lilconfig: 2.0.6
             postcss: 8.4.19
             yaml: 1.10.2
+
+    /postcss-selector-parser/6.0.10:
+        resolution:
+            {
+                integrity: sha512-IQ7TZdoaqbT+LCpShg46jnZVlhWD2w6iQYAcYXfHARZ7X1t/UGhhceQDs5X0cGqKvYlHNOuv7Oa1xmb0oQuA3w==
+            }
+        engines: { node: ">=4" }
+        dependencies:
+            cssesc: 3.0.0
+            util-deprecate: 1.0.2
+        dev: true
 
     /postcss/8.4.19:
         resolution:
