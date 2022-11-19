@@ -2,11 +2,12 @@
 import Tag from "./Tag.astro";
 
 export interface Props {
-    expression: string
+    expression: string;
 }
 
 const { expression } = Astro.props as Props;
 ---
-<Tag expression={`if ${expression}`}/>
-    <slot/>
-<Tag expression="endif"/>
+
+<Tag expression={`if ${expression}`} />
+<slot />
+<Tag expression="endif" />

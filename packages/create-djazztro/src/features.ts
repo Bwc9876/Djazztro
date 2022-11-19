@@ -66,5 +66,23 @@ export const makeGitStuff = (data: PromptData) => {
         fs.writeFileSync(`${data.projectName}/.prettierignore`, filesToIgnore.join("\n"));
     }
 
+    const readme = `# ${data.projectName}
+${data.projectDescription}
+
+## Setup
+
+To setup a development environment first ensure you have python and node installed.
+Then also ensure ${data.nodePackageManager} and ${data.pythonPackageManager} are installed as well.
+
+Clone the repo and run \`${data.nodePackageManager} install\` to install all frontend dependencies.
+Then, install all backend dependencies (we use ${data.pythonPackageManager}).
+
+## Running
+
+To run a development server, run \`${data.nodePackageManager} run dev\`.
+`;
+
+    fs.writeFileSync(`${data.projectName}/README.md`, readme);
+
     execAsync("git init", `${data.projectName}`);
 };

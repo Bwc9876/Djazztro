@@ -8,10 +8,11 @@
     },
     "packageManager": "pnpm@7.9.5",
     "scripts": {
-        "prettify": "prettier --write .",
+        "prettify": "prettier --write . --plugin-search-dir=. --ignore-unknown",
         "black": "poetry run black .",
-        "lint": "eslint .",
-        "format": "pnpm prettify && pnpm lint --fix && pnpm black"
+        "lint": "eslint --cache .",
+        "format": "pnpm prettify && pnpm lint --fix && pnpm black",
+        "prepare": "husky install"
     },
     "workspaces": [
         "packages/*"
@@ -22,7 +23,15 @@
         "@typescript-eslint/parser": "^5.42.1",
         "eslint": "^8.27.0",
         "eslint-config-prettier": "^8.5.0",
+        "husky": "^8.0.2",
+        "lint-staged": "^13.0.3",
         "prettier": "^2.7.1",
+        "prettier-plugin-astro": "^0.7.0",
         "typescript": "^4.8.4"
+    },
+    "lint-staged": {
+        "*.{astro,js,ts,json,yaml}": "prettier --plugin-search-dir=. --ignore-unknown --write",
+        "*.{js,ts}": "eslint --cache --fix",
+        "*.{py}": "poetry run black"
     }
 }

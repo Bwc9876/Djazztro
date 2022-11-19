@@ -15,7 +15,7 @@ class TemplateFetchError(Exception):
 class DjazztroBackend(DjangoTemplates):
     def get_template(self, template_name):
         if settings.DEBUG:
-            return self.get_template_dev(template_name, 3000)
+            return self.get_template_dev(template_name, settings.ASTRO_PORT or 3000)
         else:
             return self.get_template_prod(template_name)
 

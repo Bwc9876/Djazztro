@@ -2,8 +2,21 @@ name: Publish
 on: workflow_dispatch
 
 jobs:
-  publish:
-    name: Publish
+  publish-python:
+    name: Publish Python Package
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/django-djazztro
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Publish
+        uses: JRubics/poetry-publish@v1.15
+        with:
+          pypi_token: ${{ secrets.PYPI_TOKEN }}
+  publish-js:
+    name: Publish JS Packages
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
