@@ -22,7 +22,7 @@ jobs:
         run: |
           cd packages/django-djazztro
           poetry config pypi-token.pypi $PYPI_TOKEN
-          poetry publish --build
+          poetry publish --build --skip-existing
         env:
           PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
   publish-js:
