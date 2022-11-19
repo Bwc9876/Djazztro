@@ -3,7 +3,6 @@ name = "django-djazztro"
 version = "0.2.0"
 description = "Python-side of the Djazztro stack, provides a template backend for using Astro files."
 authors = ["Ben C <bwc9876@gmail.com>"]
-readme = "../../README.md"
 packages = [{include = "django_djazztro"}]
 
 [tool.poetry.dependencies]
