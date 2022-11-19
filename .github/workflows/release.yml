@@ -15,7 +15,9 @@ jobs:
       - name: Setup Poetry
         uses: Gr1N/setup-poetry@v7
       - name: Install Dependencies
-        run: poetry install
+        run: |
+          cd packages/django-djazztro
+          poetry install
       - name: Publish Package
         run: |
           cd packages/django-djazztro
