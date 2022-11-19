@@ -4,17 +4,25 @@ on: workflow_dispatch
 jobs:
   publish-python:
     name: Publish Python Package
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: packages/django-djazztro
+    runs-on: ubuntu-latest     
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Publish
-        uses: JRubics/poetry-publish@v1.15
+      - name: Setup Python 
+        uses: actions/setup-python@v4
         with:
-          pypi_token: ${{ secrets.PYPI_TOKEN }}
+          python-version: 3.11
+      - name: Setup Poetry
+        uses: Gr1N/setup-poetry@v7
+      - name: Install Dependencies
+        run: poetry install
+      - name: Publish Package
+        run: |
+          cd packages/django-djazztro
+          poetry config pypi-token.pypi $PYPI_TOKEN
+          poetry publish --build
+        env:
+          PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
   publish-js:
     name: Publish JS Packages
     runs-on: ubuntu-latest
