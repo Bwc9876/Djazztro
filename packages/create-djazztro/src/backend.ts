@@ -120,6 +120,20 @@ MIDDLEWARE = [
 ROOT_URLCONF = '${data.projectName}.urls'
 
 TEMPLATES = [
+    # Here for the admin module
+    {
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "DIRS": [],
+        "APP_DIRS": True,
+        "OPTIONS": {
+            "context_processors": [
+                "django.template.context_processors.debug",
+                "django.template.context_processors.request",
+                "django.contrib.auth.context_processors.auth",
+                "django.contrib.messages.context_processors.messages",
+            ],
+        },
+    },
     {
         'BACKEND': 'django_djazztro.backends.DjazztroBackend',
         'DIRS': [BASE_DIR / "../dist/templates"],
