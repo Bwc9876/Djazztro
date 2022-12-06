@@ -26,7 +26,7 @@ class DjazztroBackend(DjangoTemplates):
         try:
             resp = requests.get(f"http://localhost:{dev_port}/{template_name}.html")
             if resp.status_code == 404:
-                raise TemplateFetchError(f"Couldn't find template: {template_name}")
+                return self.get_template_prod(template_name)
             template_text = resp.text.replace(
                 'src="/', f'src="http://localhost:{dev_port}/'
             )
