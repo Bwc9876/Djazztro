@@ -16,7 +16,7 @@ Djazztro combines the versatility of [Django](https://www.djangoproject.com/) wi
 
 Djazztro is a stack for people who want to use Astro, but don't want to give up Django's admin panel, or Django's ORM. It's also a stack for people who want to use Django, but don't want to give up Astro's component based approach to frontend development.
 
-I chose Astro specifically because it supports many other component frameworks such as React, Vue, Svelte, and more. Meaning this stack not only connect Django and Astro, but Django and all those frameworks and their ecosystems.
+I chose Astro specifically because it supports many other component frameworks such as React, Vue, Svelte, and more. Meaning this stack not only connects Django and Astro, but Django and all those frameworks and their ecosystems.
 
 ## Setup
 
