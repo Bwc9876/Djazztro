@@ -17,7 +17,7 @@ export const makeProjectJson = (data: PromptData) => {
         version: "0.1.0",
         scripts: {
             django: `cd backend && ${djangoCommand}`,
-            astro: "cd frontend && astro",
+            astro: "astro --root=frontend",
             "dev:frontend": "npm run astro dev",
             "dev:backend": "npm run django runserver",
             dev: 'concurrently npm:dev:frontend npm:dev:backend -n "Astro,Django"',
@@ -36,7 +36,7 @@ export const makeProjectJson = (data: PromptData) => {
     const black = data.features.includes("Black");
 
     if (prettier) {
-        contents.scripts["prettify"] = "prettier --plugin-search-dir=. --write ./frontend";
+        contents.scripts["prettify"] = "prettier --write ./frontend";
     }
 
     if (eslint) {
