@@ -12,6 +12,23 @@ export default defineConfig({
                 src: "./src/assets/Djazztro-Logo.png"
             },
             favicon: "favicon.png",
+            head: [
+                {
+                    tag: "meta",
+                    attrs: {
+                        property: "og:image",
+                        content: "https://bwc9876.github.io/Djazztro/og_banner.png"
+                    }
+                },
+                {
+                    tag: "meta",
+                    attrs: {
+                        property: "og:image:alt",
+                        content:
+                            'The Djazztro logo with the tagline "The web framework for astronauts with deadlines"'
+                    }
+                }
+            ],
             editLink: {
                 baseUrl: "https://github.com/withastro/starlight/edit/main/docs"
             },

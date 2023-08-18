@@ -60,9 +60,9 @@ import { Variable, For, If, ElseIf, Else } from "djazztro";
 
 All these components secretly use Django's template language.
 
-- The `<Variable>` component renders to `{{ {expression} }}`.
-- The `<Tag>` component renders to `{% {expression} %}`.
-- All other components combine these two components to create some more useful ones.
+-   The `<Variable>` component renders to `{{ {expression} }}`.
+-   The `<Tag>` component renders to `{% {expression} %}`.
+-   All other components combine these two components to create some more useful ones.
 
 All expressions also have escaping turned off **on Astro's side**, Django will still escape them.
 

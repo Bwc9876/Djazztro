@@ -9,10 +9,10 @@ This guide will walk you through setting up a new Djazztro project.
 
 Djazztro has a few requirements:
 
-- Node
-- Python 3.9+
-- Pip, Pipenv, or Poetry, whichever you prefer
-- NPM, PNPM, or Yarn, whichever you prefer
+-   Node
+-   Python 3.9+
+-   Pip, Pipenv, or Poetry, whichever you prefer
+-   NPM, PNPM, or Yarn, whichever you prefer
 
 ## Creating a new project
 
