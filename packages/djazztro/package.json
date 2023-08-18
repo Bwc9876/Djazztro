@@ -4,7 +4,7 @@
     "author": "Bwc9876 <bwc9876@gmail.com> (https://github.com/Bwc9876)",
     "homepage": "https://github.com/Bwc9876/Djazztro",
     "readme": "https://raw.githubusercontent.com/Bwc9876/Djazztro/main/README.md",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "repository": {
         "type": "git",
         "url": "https://github.com/Bwc9876/Djazztro.git",
@@ -27,10 +27,10 @@
     ],
     "scripts": {},
     "devDependencies": {
-        "astro": "^1.7.2"
+        "astro": "^2.10.9"
     },
     "peerDependencies": {
-        "astro": "^1.6.7"
+        "astro": "^2"
     },
     "license": "MIT"
 }
