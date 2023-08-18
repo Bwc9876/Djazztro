@@ -34,5 +34,10 @@
         "*.{astro,js,ts,json,yaml}": "prettier --ignore-unknown --write",
         "*.{js,ts}": "eslint --cache --fix",
         "*.{py}": "poetry run black"
+    },
+    "dependencies": {
+        "@astrojs/starlight": "^0.7.2",
+        "astro": "^2.10.11",
+        "sharp": "^0.32.5"
     }
 }
