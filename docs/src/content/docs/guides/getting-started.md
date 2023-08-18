@@ -9,10 +9,10 @@ This guide will walk you through setting up a new Djazztro project.
 
 Djazztro has a few requirements:
 
--   Node
--   Python 3.9+
--   Pip, Pipenv, or Poetry, whichever you prefer
--   NPM, PNPM, or Yarn, whichever you prefer
+- Node
+- Python 3.9+
+- Pip, Pipenv, or Poetry, whichever you prefer
+- NPM, PNPM, or Yarn, whichever you prefer
 
 ## Creating a new project
 
@@ -58,4 +58,4 @@ npm run preview
 
 From here on you'll need knowledge of both Django and Astro, this library acts as the glue between the two but leaves how to structure each part up to you.
 
-You can see the [Components Reference](/reference/components) for info on how the components Djazztro provides to you for inter-oping between Astro and Django.
+You can see the [Components Reference](/Djazztro/reference/components) for info on how the components Djazztro provides to you for inter-oping between Astro and Django.
