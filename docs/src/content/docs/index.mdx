@@ -1,0 +1,50 @@
+---
+title: Djazztro
+description: The web framework for astronauts with deadlines
+template: splash
+hero:
+    tagline: The web framework for astronauts with deadlines
+    image:
+        file: ../../assets/Djazztro-Logo.png
+    actions:
+        - text: Get Started
+          link: /guides/introduction
+          icon: right-arrow
+          variant: primary
+        - text: GitHub
+          link: https://github.com/Bwc9876/Djazztro
+          icon: github
+---
+
+import { Card, CardGrid } from "@astrojs/starlight/components";
+
+## Why Djazztro?
+
+<CardGrid stagger>
+    <Card title="Best Of Both Worlds" icon="forward-slash">
+        Djazztro combines the versatility and user-friendliness of Django's SSR and ORM and the
+        speed and flexibility of Astro's SSG and component-based approach. And since it's built on
+        top of Astro, you can use any of the thousands of NPM packages available, including React,
+        Vue, and Svelte components.
+    </Card>
+    <Card title="No Production Overhead" icon="rocket">
+        Djazztro builds the frontend of your site statically for production, so to Django the site
+        is just a bunch of templates. Meaning no need to setup Astro or node in production.
+    </Card>
+    <Card title="Hot Module Reloading" icon="puzzle">
+        You don't have to worry about giving up HMR on the frontend site
+    </Card>
+    <Card title="Easy to Setup" icon="star">
+        Djazztro is easy to setup with the `create-djazztro` package. It lets you choose your
+        favorite Node and Python package managers, and even lets you setup TypeScript, prettier,
+        black, and more!
+    </Card>
+</CardGrid>
+
+## Contributing
+
+Contributions are welcome! Please open an issue or a PR if you have any ideas.
+
+## License
+
+Djazztro is licensed under the MIT License.
