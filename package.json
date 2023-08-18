@@ -8,6 +8,7 @@
     },
     "packageManager": "pnpm@7.9.5",
     "scripts": {
+        "astro": "astro --root=docs",
         "prettify": "prettier --write . --ignore-unknown",
         "black": "poetry run black .",
         "lint": "eslint --cache .",

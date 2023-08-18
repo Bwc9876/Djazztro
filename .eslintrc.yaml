@@ -12,5 +12,6 @@ plugins:
     - "@typescript-eslint"
 ignorePatterns:
     - "**/dist/*.js"
+    - "**/dist/**/*"
 rules:
     "@typescript-eslint/no-explicit-any": off
