@@ -19,8 +19,7 @@
     "files": [
         "dist",
         "index.js",
-        "tsconfig.json",
-        "../../README.md"
+        "tsconfig.json"
     ],
     "scripts": {
         "prepublish": "pnpm build",
