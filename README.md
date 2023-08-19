@@ -12,6 +12,8 @@ The web development stack for astronauts with deadlines.
 
 Djazztro combines the versatility of [Django](https://www.djangoproject.com/) with the elegance of the [Astro](https://www.astro.build/) static site generator.
 
+You can read more about it [on the Djazztro documentation site](https://bwc9876.github.io/Djazztro)!
+
 ## Why?
 
 Djazztro is a stack for people who want to use Astro, but don't want to give up Django's admin panel, or Django's ORM. It's also a stack for people who want to use Django, but don't want to give up Astro's component based approach to frontend development.
